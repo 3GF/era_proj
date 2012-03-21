@@ -1,0 +1,10 @@
+Test data "rif80" consists of the following files:
+
+rif_ef.xml
+table_1.xls
+drawing_1.png
+drawing_1.vsd
+picture_2.png
+
+
+These files have to be compressed into one ZIP file named "rif80.zip".

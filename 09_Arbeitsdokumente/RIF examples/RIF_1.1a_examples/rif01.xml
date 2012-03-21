@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RIF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://automotive-his.de/200706/rif" xmlns:rif-xhtml="http://automotive-his.de/200706/rif-xhtml" xsi:schemaLocation="http://automotive-his.de/200706/rif rif.xsd http://automotive-his.de/200706/rif-xhtml rif-xhtml.xsd">
+	<TITLE>Test data RIF00</TITLE>
+	<COMMENT>RiF exchange file with administrative data but no attribute types and specification objects.</COMMENT>
+	<AUTHOR>Stefan Hendrata</AUTHOR>
+	<VERSION>0.1</VERSION>
+	<CREATION-TIME>2005-05-23T12:00:00+02:00</CREATION-TIME>
+	<COUNTRY-CODE>DE</COUNTRY-CODE>
+	<SOURCE-TOOL-ID>Manually written</SOURCE-TOOL-ID>
+	<IDENTIFIER>ID_RIF_File</IDENTIFIER>
+</RIF>

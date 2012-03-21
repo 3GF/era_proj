@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+(C) copyright 2010 by enso managers GmbH, Berlin, and exxcellent solutions GmbH, Ulm.
+You may use this file "as-is". We do our best to provide correct and useful resources, but we shall not be held liable in any way.
+We appreciate any correction, comment or contribution via e-mail to office(at)enso-managers.com or info(at)exxcellent.de.
+-->
+<RIF xmlns="http://automotive-his.de/200807/rif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://automotive-his.de/200807/rif rif.xsd">
+	<HEADER>
+		<RIF-HEADER>
+			<AUTHOR>molp</AUTHOR>
+			<CREATION-TIME>2005-05-31T10:36:17+02:00</CREATION-TIME>
+			<IDENTIFIER>ID_RIF_File</IDENTIFIER>
+			<SOURCE-TOOL-ID>manually written</SOURCE-TOOL-ID>
+			<TITLE>Datatype Node Factory Test</TITLE>
+			
+		</RIF-HEADER>
+	</HEADER>
+	<CORE-CONTENT>
+		<RIF-CONTENT>
+			<DATATYPES>
+				<DATATYPE-DEFINITION-ENUMERATION>
+					<IDENTIFIER>testenum</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<SPECIFIED-VALUES>
+					<ENUM-VALUE>
+						<IDENTIFIER>testenumValue1</IDENTIFIER>
+						<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+						<PROPERTIES>
+							<EMBEDDED-VALUE>
+								<KEY>1</KEY>
+								<OTHER-CONTENT></OTHER-CONTENT>
+							</EMBEDDED-VALUE>
+						</PROPERTIES>
+					</ENUM-VALUE>
+					<ENUM-VALUE>
+						<IDENTIFIER>testenumValue2</IDENTIFIER>
+						<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+						<PROPERTIES>
+							<EMBEDDED-VALUE>
+								<KEY>2</KEY>
+								<OTHER-CONTENT>other content</OTHER-CONTENT>
+							</EMBEDDED-VALUE>
+						</PROPERTIES>
+					</ENUM-VALUE>
+					</SPECIFIED-VALUES>
+				</DATATYPE-DEFINITION-ENUMERATION>
+			</DATATYPES>
+		</RIF-CONTENT>
+	</CORE-CONTENT>	
+</RIF>

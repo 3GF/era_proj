@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- 
+(C) copyright 2010 by enso managers GmbH, Berlin, and exxcellent solutions GmbH, Ulm.
+You may use this file "as-is". We do our best to provide correct and useful resources, but we shall not be held liable in any way.
+We appreciate any correction, comment or contribution via e-mail to office(at)enso-managers.com or info(at)exxcellent.de.
+--><RIF xmlns="http://automotive-his.de/200807/rif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://automotive-his.de/200807/rif rif.xsd">
+	<HEADER>
+		<RIF-HEADER>
+			<AUTHOR>molp</AUTHOR>
+			<COMMENT>test comment</COMMENT>
+			<CREATION-TIME>2010-07-29T09:30:31+00:00</CREATION-TIME>
+			<IDENTIFIER>importProjectTest</IDENTIFIER>
+			<SOURCE-TOOL-ID>Manually written</SOURCE-TOOL-ID>
+			<TITLE>Test Titel</TITLE>			
+		</RIF-HEADER>
+	</HEADER>
+	<CORE-CONTENT>
+		<RIF-CONTENT/>
+	</CORE-CONTENT>
+</RIF>

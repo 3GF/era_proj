@@ -1,0 +1,246 @@
+### This file configures various client-side behaviors.
+###
+### The commented-out examples below are intended to demonstrate
+### how to use this file.
+
+### Section for authentication and authorization customizations.
+### Set store-auth-creds to 'no' to avoid storing your subversion
+### credentials in the auth/ area of your config directory.
+### It defaults to 'yes'.  Note that this option only prevents
+### saving of *new* credentials;  it doesn't invalidate existing
+### caches.  (To do that, remove the cache files by hand.)
+[auth]
+store-auth-creds = yes
+
+### Section for configuring external helper applications.
+### Set editor to the command used to invoke your text editor.
+###   This will override the environment variables that Subversion
+###   examines by default to find this information ($EDITOR, 
+###   et al).
+### Set diff-cmd to the absolute path of your 'diff' program.
+###   This will override the compile-time default, which is to use
+###   Subversion's internal diff implementation.
+### Set diff3-cmd to the absolute path of your 'diff3' program.
+###   This will override the compile-time default, which is to use
+###   Subversion's internal diff3 implementation.
+### Set diff3-has-program-arg to 'true' or 'yes' if your 'diff3'
+###   program accepts the '--diff-program' option.
+# [helpers]
+# editor-cmd = vim -c 'set tw=72 et'
+# diff-cmd = diff_program (diff, gdiff, etc.)
+# diff3-cmd = diff3_program (diff3, gdiff3, etc.)
+# diff3-has-program-arg = [true | false]
+
+### Section for configuring tunnel agents.
+# [tunnels]
+### Configure svn protocol tunnel schemes here.  By default, only
+### the 'ssh' scheme is defined.  You can define other schemes to
+### be used with 'svn+scheme://hostname/path' URLs.  A scheme
+### definition is simply a command, optionally prefixed by an
+### environment variable name which can override the command if it
+### is defined.  The command (or environment variable) may contain
+### arguments, using standard shell quoting for arguments with
+### spaces.  The command will be invoked as:
+###   <command> <hostname> svnserve -t
+### (If the URL includes a username, then the hostname will be
+### passed to the tunnel agent as <user>@<hostname>.)  If the
+### built-in ssh scheme were not predefined, it could be defined
+### as:
+# ssh = $SVN_SSH ssh
+### If you wanted to define a new 'rsh' scheme, to be used with
+### 'svn+rsh:' URLs, you could do so as follows:
+# rsh = rsh
+### Or, if you wanted to specify a full path and arguments:
+# rsh = /path/to/rsh -l myusername
+### On Windows, if you are specifying a full path to a command,
+### use a forward slash (/) or a paired backslash (\\) as the
+### path separator.  A single backslash will be treated as an
+### escape for the following character.
+
+### Section for configuring miscelleneous Subversion options.
+[miscellany]
+### Set global-ignores to a set of whitespace-delimited globs
+### which Subversion will ignore in its 'status' output.
+global-ignores = *.o *.lo .la ## .*.rej .rej .~ ~ .# .DS_Store cvs CVS .CVS .cvs thumbs.db Thumbs.db *.bak *.exe *.dll *.log bin build target maven-eclipse.xml .springBeans .springWebflow *.mine release debug ignore .metadata .springBeans .springWebflow 
+### more global-ignores (these cannot be used for Eclipse Plug-In development!) .settings .classpath .project .metadata .externalToolBuilders *.class
+### Set log-encoding to the default encoding for log messages
+log-encoding = latin1
+### Set use-commit-times to make checkout/update/switch/revert
+### put last-committed timestamps on every file touched.
+# use-commit-times = yes
+### Set enable-auto-props to 'yes' to enable automatic properties
+### for 'svn add' and 'svn import', it defaults to 'no'.
+### Automatic properties are defined in the section 'auto-props'.
+enable-auto-props = yes
+
+### Section for configuring automatic properties.
+### The format of the entries is:
+###   file-name-pattern = propname[=value][;propname[=value]...]
+### The file-name-pattern can contain wildcards (such as '*' and
+### '?').  All entries which match will be applied to the file.
+### Note that auto-props functionality must be enabled, which
+### is typically done by setting the 'enable-auto-props' option.
+[auto-props]
+*.txt = svn:mime-type=text/plain;svn:eol-style=native
+# Keywords - Just put somewhere in your code $Id$, $Date$, $Rev$, $Author$, or $HeadURL$
+*.h = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.c = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.cpp = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.java = svn:mime-type=text/java;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.properties = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.sh = svn:mime-type=text/plain;svn:eol-style=native;svn:executable;svn:keywords="Id Date Rev Author HeadURL"
+*.py  = svn:mime-type=text/plain;svn:eol-style=native;svn:executable;svn:keywords="Id Date Rev Author HeadURL"
+*.pl  = svn:mime-type=text/plain;svn:eol-style=native;svn:executable;svn:keywords="Id Date Rev Author HeadURL"
+*.rb  = svn:mime-type=text/plain;svn:eol-style=native;svn:executable;svn:keywords="Id Date Rev Author HeadURL"
+# Borland
+*.dsp = svn:eol-style=CRLF
+*.dsw = svn:eol-style=CRLF
+# Compressed Archives (should not necessarily be checked in!
+*.jar = svn:mime-type=application/java-archive
+*.ear = svn:mime-type=application/java-archive
+*.war = svn:mime-type=application/java-archive
+*.aar = svn:mime-type=application/java-archive
+*.zip = svn:mime-type=application/zip
+*.7z = svn:mime-type=application/x-7z-compressed
+*.tar = svn:mime-type=application/tar
+*.bz = svn:mime-type=application/bzip
+*.gz = svn:mime-type=application/gzip
+# Fundamental Text Formats
+*.sql = svn:mime-type=text/sql;svn:eol-style=native
+*.htm = svn:mime-type=text/html;svn:eol-style=native
+*.html = svn:mime-type=text/html;svn:eol-style=native
+*.css = svn:mime-type=text/css;svn:eol-style=native
+Makefile = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.mk  = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.mf  = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.MF  = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+# Eclipse Project files 
+# (ATTENTION: these are in auto-ignore, because Maven-generated files
+#  are not to be added to an repository!)
+.classpath = svn:mime-type=text/xml;svn:eol-style=native
+.project = svn:mime-type=text/xml;svn:eol-style=native
+# LaTeX Files
+*.tex = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.bib = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.eps = svn:mime-type=application/eps;svn:eol-style=native
+*.cfg = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.sty = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.bst = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+*.cls = svn:mime-type=text/plain;svn:eol-style=native;svn:keywords="Id Date Rev Author HeadURL"
+# XML Files
+# (special XML files, like dia XML files, may require dedicated EOLs)
+*.xml = svn:mime-type=text/xml;svn:eol-style=native
+*.pom = svn:mime-type=text/xml;svn:eol-style=native
+*.jsp = svn:mime-type=text/xml;svn:eol-style=native
+*.wsdl = svn:mime-type=text/xml;svn:eol-style=native
+*.ecore = svn:mime-type=text/xml;svn:eol-style=native
+*.genmodel = svn:mime-type=text/xml;svn:eol-style=native
+#build.xml = svn:mime-type=text/xml;svn:eol-style=native
+#web.xml = svn:mime-type=text/xml;svn:eol-style=native
+# Vector Graphics Formats (LINUX-SPECIFIC!)
+*.sk  = svn:eol-style=LF
+*.dot = svn:mime-type=text/plain;svn:eol-style=LF;svn:keywords="Id Date Rev Author HeadURL"
+*.dia = svn:mime-type=text/xml;svn:eol-style=LF;svn:keywords="Id Date Rev Author HeadURL"
+*.fig = svn:mime-type=text/plain;svn:eol-style=LF;svn:keywords="Id Date Rev Author HeadURL"
+# Raster Graphics Formats
+*.gif = svn:mime-type=image/gif
+*.tif = svn:mime-type=image/tif
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+# Security Certificates
+*.cer = svn:mime-type=application/x-x509-ca-cert
+*.der = svn:mime-type=application/x-x509-ca-cert
+*.crt = svn:mime-type=application/x-x509-ca-cert
+*.pem = svn:mime-type=application/x-pem-file;svn:eol-style=native
+*.p7b = svn:mime-type=application/pkcs7-mime
+*.p7s = svn:mime-type=application/pkcs7-mime
+*.p7c = svn:mime-type=application/pkcs7-mime
+*.p12 = svn:mime-type=application/x-pkcs12
+*.pfx = svn:mime-type=application/x-pkcs12
+#
+# Other Binary Formats
+#
+*.pdf = svn:mime-type=application/pdf
+;*.vpp = -binary-
+*.jnlp = svn:mime-type=application/jnlp
+#
+# Windows
+#
+# Windows Graphics Formats
+*.wmf = svn:mime-type=application/wmf
+*.emf = svn:mime-type=application/emf
+*.xps = svn:mime-type=application/xps
+#
+# Office File Types
+# => change frequently, require a LOCK per default
+#
+# PowerPoint Files
+*.ppt = svn:mime-type=application/powerpoint;svn:needs-lock=*
+*.pptx = svn:mime-type=application/powerpoint;svn:needs-lock=*
+*.pptm = svn:mime-type=application/powerpoint;svn:needs-lock=*
+*.pps = svn:mime-type=application/powerpoint;svn:needs-lock=*
+*.ppsx = svn:mime-type=application/powerpoint;svn:needs-lock=*
+*.ppsm = svn:mime-type=application/powerpoint;svn:needs-lock=*
+# Word Files
+*.doc = svn:mime-type=application/word;svn:needs-lock=*
+*.docx = svn:mime-type=application/word;svn:needs-lock=*
+*.dotm = svn:mime-type=application/word;svn:needs-lock=*
+# Excel Files
+*.xls = svn:mime-type=application/msexcel;svn:needs-lock=*
+*.xlsx = svn:mime-type=application/msexcel;svn:needs-lock=*
+*.xlsm = svn:mime-type=application/msexcel;svn:needs-lock=*
+*.xlsb = svn:mime-type=application/msexcel;svn:needs-lock=*
+# Visio Files
+*.vsd = svn:mime-type=application/visio;svn:needs-lock=*
+*.vdx = svn:mime-type=application/visio;svn:needs-lock=*
+# OOo Impress 
+*.odp = svn:mime-type=application/vnd.oasis.opendocument.presentation;svn:needs-lock=*
+# OOo Writer
+*.odt = svn:mime-type=application/vnd.oasis.opendocument.text;svn:needs-lock=*
+# OOo Calc
+*.ods = svn:mime-type=application/vnd.oasis.opendocument.spreadsheet;svn:needs-lock=*
+# OOo Draw
+*.odg = svn:mime-type=application/vnd.oasis.opendocument.graphics;svn:needs-lock=*
+# OOo (more)
+*.odc = svn:mime-type=application/vnd.oasis.opendocument.chart;svn:needs-lock=*
+*.odf = svn:mime-type=application/vnd.oasis.opendocument.formula;svn:needs-lock=*
+*.odi = svn:mime-type=application/vnd.oasis.opendocument.image;svn:needs-lock=*
+#
+# Office Template File Types 
+# => change seldomly, NO lock per default
+#
+# Office Designs
+*.thmx = svn:mime-type=application/powerpoint
+# PowerPoint Templates
+*.pot = svn:mime-type=application/powerpoint
+*.potx = svn:mime-type=application/powerpoint
+*.potm = svn:mime-type=application/powerpoint
+# PowerPoint Add-Ins
+*.ppa = svn:mime-type=application/powerpoint
+*.ppam = svn:mime-type=application/powerpoint
+# Word Templates
+*.dot = svn:mime-type=application/word
+*.dotx = svn:mime-type=application/word
+*.dotm = svn:mime-type=application/word
+# Excel Templates
+*.xlt = svn:mime-type=application/msexcel
+*.xltx = svn:mime-type=application/msexcel
+*.xltm = svn:mime-type=application/msexcel
+# Visio Schablonen
+*.vss = svn:mime-type=application/visio
+*.vsx = svn:mime-type=application/visio
+# Visio Templates
+*.vst = svn:mime-type=application/visio
+*.vtx = svn:mime-type=application/visio
+# OOo Impress Templates
+*.otp = svn:mime-type=application/vnd.oasis.opendocument.presentation-template
+# OOo Writer Templates
+*.ott = svn:mime-type=application/vnd.oasis.opendocument.text-template
+# OOo Calc Templates
+*.ots = svn:mime-type=application/vnd.oasis.opendocument.spreadsheet-template
+# OOo Draw Templates
+*.otg = svn:mime-type=application/vnd.oasis.opendocument.graphics-template
+# OOo (more) Templates
+*.otc = svn:mime-type=application/vnd.oasis.opendocument.chart-template
+*.otf = svn:mime-type=application/vnd.oasis.opendocument.formula-template
+*.oti = svn:mime-type=application/vnd.oasis.opendocument.image-template

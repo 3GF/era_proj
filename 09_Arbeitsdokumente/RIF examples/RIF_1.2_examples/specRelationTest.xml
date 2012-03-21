@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+(C) copyright 2010 by enso managers GmbH, Berlin, and exxcellent solutions GmbH, Ulm.
+You may use this file "as-is". We do our best to provide correct and useful resources, but we shall not be held liable in any way.
+We appreciate any correction, comment or contribution via e-mail to office(at)enso-managers.com or info(at)exxcellent.de.
+-->
+<RIF xmlns="http://automotive-his.de/200807/rif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://automotive-his.de/200807/rif rif.xsd">
+	<HEADER>
+		<RIF-HEADER>
+			<AUTHOR>molp</AUTHOR>
+			<COMMENT>test comment</COMMENT>
+			<CREATION-TIME>2010-07-29T09:30:31+00:00</CREATION-TIME>
+			<IDENTIFIER>specRelationTest</IDENTIFIER>
+			<SOURCE-TOOL-ID>Manually written</SOURCE-TOOL-ID>
+			<TITLE>Test Titel</TITLE>
+		</RIF-HEADER>
+	</HEADER>
+	<CORE-CONTENT>
+		<RIF-CONTENT>
+			<DATATYPES>
+				<DATATYPE-DEFINITION-STRING>
+					<DESC>This is a standard string type.</DESC>
+					<LONG-NAME>Standard String Type</LONG-NAME>
+					<IDENTIFIER>ID_StringType_1</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<MAX-LENGTH>65535</MAX-LENGTH>
+				</DATATYPE-DEFINITION-STRING>
+				<DATATYPE-DEFINITION-INTEGER>
+					<DESC>Integer Description</DESC>
+					<LONG-NAME>Standard Integer Type</LONG-NAME>
+					<IDENTIFIER>ID_IntegerType_1</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<MAX>23</MAX>
+					<MIN>1</MIN>
+				</DATATYPE-DEFINITION-INTEGER>
+			</DATATYPES>
+			<SPEC-TYPES>
+				<SPEC-TYPE>
+					<LONG-NAME>Requirement</LONG-NAME>
+					<IDENTIFIER>SpecType1</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<SPEC-ATTRIBUTES>
+						<ATTRIBUTE-DEFINITION-SIMPLE>
+							<DEFAULT-VALUE>
+								<ATTRIBUTE-VALUE-SIMPLE>
+									<DESC>Default Value SpecType1 (Requirement)</DESC>
+									<LONG-NAME>Default Value Requirement</LONG-NAME>
+									<IDENTIFIER>SpecTypeDefaultValue1</IDENTIFIER>
+									<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+									<DEFINITION>
+										<ATTRIBUTE-DEFINITION-SIMPLE-REF>SpecTypeAttDefinition1</ATTRIBUTE-DEFINITION-SIMPLE-REF>
+									</DEFINITION>
+									<THE-VALUE>default string</THE-VALUE>
+								</ATTRIBUTE-VALUE-SIMPLE>
+							</DEFAULT-VALUE>
+							<IDENTIFIER>SpecTypeAttDefinition1</IDENTIFIER>
+							<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+							<TYPE>
+								<DATATYPE-DEFINITION-STRING-REF>ID_StringType_1</DATATYPE-DEFINITION-STRING-REF>
+							</TYPE>
+						</ATTRIBUTE-DEFINITION-SIMPLE>
+					</SPEC-ATTRIBUTES>
+				</SPEC-TYPE>
+			</SPEC-TYPES>
+			<SPEC-OBJECTS>
+				<SPEC-OBJECT>
+					<IDENTIFIER>SpecObject101</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<TYPE>
+						<SPEC-TYPE-REF>SpecType1</SPEC-TYPE-REF>
+					</TYPE>
+				</SPEC-OBJECT>
+				<SPEC-OBJECT>
+					<IDENTIFIER>SpecObject102</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<TYPE>
+						<SPEC-TYPE-REF>SpecType1</SPEC-TYPE-REF>
+					</TYPE>
+				</SPEC-OBJECT>
+				<SPEC-OBJECT>
+					<IDENTIFIER>SpecObject103</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<TYPE>
+						<SPEC-TYPE-REF>SpecType1</SPEC-TYPE-REF>
+					</TYPE>
+				</SPEC-OBJECT>
+				<SPEC-OBJECT>
+					<IDENTIFIER>SpecObject104</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<TYPE>
+						<SPEC-TYPE-REF>SpecType1</SPEC-TYPE-REF>
+					</TYPE>
+				</SPEC-OBJECT>
+			</SPEC-OBJECTS>
+			<SPEC-RELATIONS>
+				<SPEC-RELATION>
+					<IDENTIFIER>SpecRelation1</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<TYPE>
+						<SPEC-TYPE-REF>SpecType1</SPEC-TYPE-REF>
+					</TYPE>
+					<SOURCE>
+						<SPEC-OBJECT-REF>SpecObject101</SPEC-OBJECT-REF>
+					</SOURCE>
+					<TARGET>
+						<SPEC-OBJECT-REF>SpecObject102</SPEC-OBJECT-REF>
+					</TARGET>
+					<VALUES>
+						<ATTRIBUTE-VALUE-SIMPLE>
+							<IDENTIFIER>SpecRelation1Attribute1</IDENTIFIER>
+							<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+							<DEFINITION>
+								<ATTRIBUTE-DEFINITION-SIMPLE-REF>SpecTypeAttDefinition1</ATTRIBUTE-DEFINITION-SIMPLE-REF>
+							</DEFINITION>
+							<THE-VALUE>test value 1</THE-VALUE>
+						</ATTRIBUTE-VALUE-SIMPLE>
+					</VALUES>
+				</SPEC-RELATION>
+				<SPEC-RELATION>
+					<IDENTIFIER>SpecRelation2</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<TYPE>
+						<SPEC-TYPE-REF>SpecType1</SPEC-TYPE-REF>
+					</TYPE>
+					<SOURCE>
+						<SPEC-OBJECT-REF>SpecObject102</SPEC-OBJECT-REF>
+					</SOURCE>
+					<TARGET>
+						<SPEC-OBJECT-REF>SpecObject101</SPEC-OBJECT-REF>
+					</TARGET>
+				</SPEC-RELATION>
+			</SPEC-RELATIONS>
+			<SPEC-GROUPS>
+				<SPEC-GROUP>
+					<IDENTIFIER>SpecGroup1</IDENTIFIER>
+					<LAST-CHANGE>2010-07-29T09:30:31+00:00</LAST-CHANGE>
+					<TYPE>
+						<SPEC-TYPE-REF>SpecType1</SPEC-TYPE-REF>
+					</TYPE>
+					<SPEC-OBJECTS>
+						<SPEC-OBJECT-REF>SpecObject101</SPEC-OBJECT-REF>
+					</SPEC-OBJECTS>
+				</SPEC-GROUP>
+			</SPEC-GROUPS>
+		</RIF-CONTENT>
+	</CORE-CONTENT>
+</RIF>
